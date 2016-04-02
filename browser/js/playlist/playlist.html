@@ -4,16 +4,13 @@
 		<form name="playlistForm" class="form-group">
 			<div>
 				<div ng-show="playlistForm.$dirty && playlistForm.$invalid" class="alert alert-warning">Please enter a name</div>
-				<label class="col-xs-2" ng-click="log()">Playlist Name:</label>
+				<label class="col-xs-2">Playlist Name:</label>
 				<input class="col-xs-10" name="playlistName" ng-model="playlist.name" required ng-maxlength="16">
 			</div>
 			<div>
 				<div class="col-xs-10 col-xs-offset-2">
-				<button ng-disabled="playlistForm.$invalid" type="submit" class="btn btn-success" ng-click="createPlaylist">Create</button>
+				<button ng-disabled="playlistForm.$invalid" type="submit" class="btn btn-success" ng-click="createPlaylist()">Create</button>
 			</div>
 		</form>
 	</fieldset>
-</div>
-<div>
-	<p></p>
 </div>

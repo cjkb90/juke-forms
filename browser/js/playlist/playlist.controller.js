@@ -1,8 +1,6 @@
-juke.controller('PlaylistCtrl',function($scope){
+juke.controller('PlaylistCtrl',function($scope, PlaylistFactory){
 	$scope.createPlaylist = function(){
-		console.log('clicked');
-	}
-	$scope.log = function(){
-		console.log($scope.playlistForm);
+		PlaylistFactory.create($scope.playlist);
+		$scope.playlistForm.$dirty=false;
 	}
 });
