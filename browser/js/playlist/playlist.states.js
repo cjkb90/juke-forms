@@ -7,3 +7,7 @@ juke.config(function($stateProvider){
 		controller: 'PlaylistCtrl'
 	});
 });
+
+juke.run(function($rootScope) {
+  $rootScope.$on("$stateChangeError", console.log.bind(console));
+});
