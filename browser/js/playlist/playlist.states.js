@@ -5,9 +5,16 @@ juke.config(function($stateProvider){
 		url: '/playlist/new',
 		templateUrl: 'js/playlist/playlist.html',
 		controller: 'PlaylistCtrl'
-	});
+	})
+	$stateProvider.state('onePlaylist',{
+		url: '/playlist/:playlistId',
+		templateUrl: 'js/playlist/onePlaylist.html',
+		controller: 'PlaylistCtrl',
+		resolve: {
+			thePlaylist: function(PlaylistFactory, $stateParams){
+				return PlaylistFactory.fetchById($stateParams.playlistId);
+			}
+		}
+	})
 });
 
-juke.run(function($rootScope) {
-  $rootScope.$on("$stateChangeError", console.log.bind(console));
-});
